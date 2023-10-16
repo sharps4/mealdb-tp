@@ -9,15 +9,25 @@ export default function MealDetails() {
     console.log(meal);
     if (meal) {
         return (
-            <ul>
+            <>
                 {meal.map((meal) => 
-                    <li key={meal.idMeal}>
-                        <img src={meal.strMealThumb} alt={meal.strMeal}/>
+                    <div key={meal.idMeal} className='details-container'>
                         <h2>{meal.strMeal}</h2>
+                        <img src={meal.strMealThumb} alt={meal.strMeal}/>
+                        <h2>Ingredients</h2>
+                        <ul className='ingredients-tab'>
+                            {Object.keys(meal).filter(key => key.startsWith('strIngredient')).map((key, index) => (
+                                <li key={key}>
+                                    <div className="ingredient">{meal[key]}</div>
+                                    <div className="quantity">{meal[`strMeasure${index + 1}`]}</div>
+                                </li>
+                            ))}
+                        </ul>
+                        <h2>Instructions</h2>
                         <p>{meal.strInstructions}</p>
-                    </li>
+                    </div>
                 )}
-            </ul>
+            </>
         )
     }
 }

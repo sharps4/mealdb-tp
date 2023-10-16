@@ -9,26 +9,30 @@ const AddRecipe = ({ addMeal }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    const recipe = {
-      id: Date.now(),
-      name,
-      ingredients,
-      instructions,
-      image,
+  
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const recipe = {
+        id: Date.now(),
+        name,
+        ingredients,
+        instructions,
+        image: event.target.result,
+      };
+  
+      const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+      recipes.push(recipe);
+      localStorage.setItem('recipes', JSON.stringify(recipes));
+  
+      addMeal(recipe);
+      setName('');
+      setIngredients('');
+      setInstructions('');
+      setImage(null);
     };
-
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    recipes.push(recipe);
-    localStorage.setItem('recipes', JSON.stringify(recipes));
-
-    addMeal(recipe);
-    setName('');
-    setIngredients('');
-    setInstructions('');
-    setImage(null);
+    reader.readAsDataURL(image);
   };
-
+  
   const handleImageChange = (event) => {
     setImage(event.target.files[0]);
   };
@@ -36,25 +40,17 @@ const AddRecipe = ({ addMeal }) => {
   return (
     <div>
       <form className='addrecipe' onSubmit={handleSubmit}>
-        <label>
-          Nom:
-          <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
-        </label>
-        <label>
-          Ingredients:
-          <textarea value={ingredients} onChange={(event) => setIngredients(event.target.value)} />
-        </label>
-        <label>
-          Instructions:
-          <textarea value={instructions} onChange={(event) => setInstructions(event.target.value)} />
-        </label>
-        <label>
-          Image:
-          <input type="file" accept="image/*" onChange={handleImageChange} />
-        </label>
-        <Link to='/'>
+        <label>Nom:</label>
+        <input type="text" value={name} onChange={(event) => setName(event.target.value)}/>
+        <label>Ingredients:</label>
+        <textarea value={ingredients} onChange={(event) => setIngredients(event.target.value)}/>
+        <label>Instructions:</label>
+        <textarea value={instructions} onChange={(event) => setInstructions(event.target.value)}/>
+        <label>Image:</label>
+        <input type="file" accept="image/*" onChange={handleImageChange}/>
+        {/* <Link to='/'> */}
           <button type="submit">Ajouter une recette</button>
-        </Link>
+        {/* </Link> */}
       </form>
     </div>
   );

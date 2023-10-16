@@ -24,6 +24,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .infos img {
@@ -32,6 +33,14 @@ body {
     border-radius: 2%;
     margin: 20px;
     margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.infos img:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 2px 2px 2px 2px #00000046;
 }
 
 .search-container {
@@ -97,7 +106,6 @@ textarea {
 input[type="text"] {
     transition: box-shadow 0.2s ease-in-out;
 }
-
   
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -126,13 +134,13 @@ button[type="submit"]:hover {
     background-color: transparent;
     border: none;
     color: #333;
-    font-size: 24px;
+    font-size: 40px;
     cursor: pointer;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
   
 .favorite-btn:hover {
-    color: #f00;
+    color: #0077ff;
 }
 
 .addrecipe {
@@ -146,4 +154,80 @@ button[type="submit"]:hover {
     border-radius: 15px;
     padding: 50px;
     margin-top: 100px;
+}
+
+.addrecipe label {
+    font-size: 1.2rem;
+}
+
+.addrecipe input {
+    margin-bottom: 20px;
+}
+
+.addrecipe button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.header-btn {
+    background-color: #0077ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.header-btn:hover {
+    background-color: #005ae6;
+    transition: all 0.2s ease-in-out;
+}
+
+.meal-name {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+  
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ingredient {
+    flex: 1;
+}
+
+.quantity {
+    margin-left: 20px;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.details-container img {
+    width: 20%;
+    height: 20%;
+    margin-bottom: 80px;
+}
+
+.details-container h2 {
+    margin-bottom: 40px;
+}
+
+.details-container p {
+    margin-bottom: 60px;
 }

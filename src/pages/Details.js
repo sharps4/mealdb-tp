@@ -7,7 +7,6 @@ function Details() {
     <>
       <Header></Header>
       <main>
-        <h1>Details</h1>
         <div>
           <MealDetails></MealDetails>
         </div>

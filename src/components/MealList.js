@@ -42,7 +42,7 @@ const MealList = ({ meals }) => {
   if (meals && meals.length > 0) {
     const list = meals.map((meal) => (
       <div key={meal.idMeal}>
-        <Link to={`/details/${meal.idMeal}`}>
+        <Link to={`/details/${meal.idMeal}`} className='meal-name'>
           <img src={meal.strMealThumb} alt={meal.strMeal} />
           <h2>{meal.strMeal}</h2>
         </Link>
@@ -51,7 +51,6 @@ const MealList = ({ meals }) => {
             <button className='favorite-btn' onClick={() => handleAddFavorite(meal)}>
               {favorites.findIndex((fav) => fav.idMeal === meal.idMeal) !== -1 ? '★' : '☆'}
             </button>
-            <span>Ajouter aux favoris</span>
           </div>
         )}
         <MealCard infos={meal} />
@@ -60,8 +59,8 @@ const MealList = ({ meals }) => {
 
     const localList = localRecipes.map((recipe) => (
       <div key={recipe.id}>
-        <Link to={`/details/${recipe.id}`}>
-          <img src={recipe.image} alt={recipe.name} />
+        <Link to={`/details/${recipe.id}`} className='meal-name'>
+          <img className='meal-img' src={recipe.image} alt={recipe.name} />
           <h2>{recipe.name}</h2>
         </Link>
         {isLoggedIn && (
@@ -69,7 +68,6 @@ const MealList = ({ meals }) => {
             <button className='favorite-btn' onClick={() => handleAddFavorite(recipe)}>
               {favorites.findIndex((fav) => fav.id === recipe.id) !== -1 ? '★' : '☆'}
             </button>
-            <span>Ajouter aux favoris</span>
           </div>
         )}
         <MealCard infos={recipe} />

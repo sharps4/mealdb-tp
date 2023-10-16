@@ -15,9 +15,9 @@ function Header() {
               <img src={Logo} alt='logo'/>
         </Link>
         {isLoggedIn ? (
-          <Link to="/" onClick={handleDisconnect}>Se déconnecter</Link>
+          <Link to="/" onClick={handleDisconnect} className='header-btn'>Se déconnecter</Link>
         ) : (
-          <Link to="/Login">Se connecter</Link>
+          <Link to="/Login" className='header-btn'>Se connecter</Link>
         )}
       </div>
     </header>

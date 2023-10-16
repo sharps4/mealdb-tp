@@ -15,7 +15,7 @@ function SearchBar() {
     return (
         <div className='search-container'>
             <input type='text' placeholder='Rechercher un plat...' value={search} onChange={handleChange} onKeyDown={handleSearch}></input>
-            <Link to='/NewRecipe'>Ajouter une recette</Link>
+            <Link to='/NewRecipe' className='header-btn'>Ajouter une recette</Link>
         </div>
     )
 }

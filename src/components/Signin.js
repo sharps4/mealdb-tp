@@ -17,7 +17,7 @@ function Signin() {
             navigate('/');
         } else {
             localStorage.setItem('isLoggedIn', false);
-            setError('Invalid email or password');
+            setError('Mauvais email ou mot de passe');
         }
     };
 
@@ -34,7 +34,7 @@ function Signin() {
                 />
             </div>
             <div>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">Mot de passe:</label>
                 <input
                     type="password"
                     id="password"
@@ -42,7 +42,7 @@ function Signin() {
                     onChange={(event) => setPassword(event.target.value)}
                 />
             </div>
-                <button type="submit">Sign in</button>
+                <button type="submit">Se connecter</button>
                 {error && <div>{error}</div>}
             </form>
         </div>
