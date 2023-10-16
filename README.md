@@ -2,12 +2,12 @@
 
 ### Télécharger le code source ou le cloner
 
-`Clone`:  
+`Clone:`
 https://github.com/sharps4/mealdb-tp.git
 
 ### npm install
 
-`Installe les modules necessaires présent dans le package.json`
+`Installe les modules nécessaires présent dans le package.json`
 
 ### npm start
 
