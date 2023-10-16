@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.infos img {
+    width: 350px;
+    height: 350px;
+    border-radius: 2%;
+    margin: 20px;
+    margin-top: 30px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search-container input {
+    width: 500px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.banner {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-container {
+    margin-top: 150px;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    padding: 50px;
+}
+  
+label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+  
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 2rem;    
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0 2px #eee;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+input[type="text"] {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+  
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #0077ff;
+}
+  
+button[type="submit"] {
+    background-color: #0077ff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    width: max-content;
+}
+  
+button[type="submit"]:hover {
+    background-color: #005ae6;
+}
+
+.favorite-btn {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+  
+.favorite-btn:hover {
+    color: #f00;
+}
+
+.addrecipe {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    padding: 50px;
+    margin-top: 100px;
+}
